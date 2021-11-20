@@ -119,3 +119,5 @@ You can now start the NextJs app by running `yarn dev` and navigating to `http:/
 ### for modified ui
 `yarn add @material-ui/core`
 
+### export out file
+npx next export
