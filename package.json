@@ -7,12 +7,13 @@
   "scripts": {
     "heroku-postbuild": "npm run build",
     "deploy": "gh-pages -d out",
-    "dev": "next dev",
+    "dev": "set NODE_OPTIONS=--openssl-legacy-provider && next dev",
     "build": "next build",
     "start": "next start -p $PORT",
     "lint": "next lint"
   },
   "dependencies": {
+    "@material-ui/core": "^4.12.3",
     "@metaplex/js": "^2.0.1",
     "@netlify/plugin-nextjs": "^3.9.2",
     "@project-serum/anchor": "^0.17.1-beta.1",
