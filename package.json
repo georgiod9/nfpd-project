@@ -4,8 +4,8 @@
   "version": "0.1.0",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
+    "start": "export SET NODE_OPTIONS=--openssl-legacy-provider && next start",
+    "build": "export SET NODE_OPTIONS=--openssl-legacy-provider && next build",
     "heroku-postbuild": "npm run build",
     "lint": "next lint",
     "test": "echo \"Error: no test specified\" && exit 1"
