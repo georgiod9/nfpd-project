@@ -3,6 +3,7 @@
   "license": "MIT",
   "name": "next-candy-machine",
   "version": "0.1.0",
+  "main": "index.tsx",
   "scripts": {
     "heroku-postbuild": "npm run build",
     "deploy": "gh-pages -d out",
