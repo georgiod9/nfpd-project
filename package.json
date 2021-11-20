@@ -7,8 +7,8 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d pages",
     "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
+    "build": "SET NODE_OPTIONS=--openssl-legacy-provider && next build",
+    "start": " next start",
     "lint": "next lint"
   },
   "dependencies": {
