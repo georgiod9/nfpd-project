@@ -1,0 +1,196 @@
+@font-face {
+    font-family: 'Poppins Regular';
+    src: url('../pages/assets/fonts/Poppins-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins Bold';
+    src: url('../pages/assets/fonts/Poppins-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins Extra Bold';
+    src: url('../pages/assets/fonts/Poppins-ExtraBold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins Light';
+    src: url('../pages/assets/fonts/Poppins-Light.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+}
+
+.countdown {
+    margin-left: 67vh;
+    text-align: center;
+    font-size: 34pt;
+    font-weight: normal;
+    color: #fcfcfc;
+    font-family: 'Poppins Regular';
+}
+
+.wallet_container {
+    width: auto;
+    text-align: center;
+    margin-left: 72vh;
+}
+
+.multi_wallet {
+    text-align: center;
+}
+
+.styledText {
+    text-align: center;
+    font-size: 14pt;
+    font-weight: normal;
+    color: #fcfcfc;
+    font-family: 'Poppins Regular';
+}
+
+.container_page {
+    margin: 3vh auto;
+    width: 1600px; 
+}
+
+.content_text {
+    text-align: center;
+    font-size: 14pt;
+    font-weight: normal;
+    color: #fcfcfc;
+    font-family: 'Poppins Regular';
+    inline-size: 200px;
+    margin: 2vh auto;
+}
+
+.content_price {
+    text-align: center;
+    font-size: 14pt;
+    font-weight: normal;
+    color: #105b72;
+    font-family: 'Poppins Light';
+
+    inline-size: 220px;
+    letter-spacing: 1px;
+    margin-left: 34vh;
+    margin-top: 20vh;
+}
+
+.container_left {
+    margin: auto auto;
+    width: 800px; 
+}
+
+.content_leftTitle {
+    margin: auto auto;
+    text-align: center;
+    font-size: 70pt;
+    font-weight: bold;
+    color: #105b72;
+    font-family: 'Poppins Bold';
+}
+
+.content_leftText {
+    margin: 5vh auto;
+    width: 280px;  
+
+    font-family: 'Poppins Light';
+    font-size: 18pt;
+    font-weight: normal;
+    color: #fcfcfc;
+    text-align: center;
+}
+
+.content_leftPrice {
+    margin: auto;
+    margin-top: 19vh;
+    inline-size: 220px;
+
+    font-family: 'Poppins Light';
+    font-size: 14pt;
+    font-weight: normal;
+    color: #105b72;
+    text-align: center;
+}
+
+.content_socials {
+    vertical-align: top;
+    text-align: center;
+    width: 800px;
+    margin: 11vh auto;
+}
+
+.content_discord {
+    margin: auto auto;
+    text-decoration: none;
+}
+
+.content_twitter {
+    margin: auto 0vh;
+    text-decoration: none;
+}
+
+.container_right {
+    margin: auto auto;
+    width: 500px;  
+    text-align: center;
+}
+
+.cover_image {
+    margin: auto auto;
+    width: 350px;
+}
+
+.container_wallet {
+    margin: auto auto;
+    text-align: center;
+    width: 200px;
+
+}
+
+.button {
+    background-color: white;
+    color: black;
+    border: 2px solid #4CAF50;
+}
+
+.connect_wallet {
+    margin: auto; 
+}
+
+.button_connect:hover {
+    background-color: #ff2424d0;
+}
+
+
+
+.content_mint {
+    width: 150px;
+    color:#FFFFFF;
+    font-family: 'Poppins Light';
+    font-size: 15px;
+    font-weight: lighter;
+}
+
+.container_generic {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: auto;
+    width: 400px;
+}
+
+.button_mint {
+    background-color: #105b72;
+    height: 35px;
+}

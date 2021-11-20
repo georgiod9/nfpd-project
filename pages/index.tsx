@@ -12,6 +12,18 @@ import Countdown from "react-countdown";
 import useWalletNfts from "../hooks/useWalletNFTs";
 import AnNFT from "../components/AnNFT/AnNFT";
 
+import { Grid, Box } from '@material-ui/core';
+
+import Discord_logo from './assets/discord.png';
+import Twitter_logo from './assets/twitter.png';
+import CoverPhoto from './assets/cover-anim.gif';
+import Image from 'next/image';
+
+import styles from '../styles/myStyle.module.css';
+import React from "react";
+import { Button } from "@solana/wallet-adapter-react-ui/lib/Button";
+
+
 export default function Home() {
   const [balance] = useWalletBalance();
   const {
@@ -29,6 +41,9 @@ export default function Home() {
 
   const [isMintLive, setIsMintLive] = useState(false);
 
+  var tempRemaining = 0;
+  var tempAvailable = 0;
+
   useEffect(() => {
     if (new Date(mintStartDate).getTime() < Date.now()) {
       setIsMintLive(true);
@@ -40,116 +55,131 @@ export default function Home() {
 
     return (
       <>
-        <button
-          onClick={() => startMintMultiple(mintCount)}
-          disabled={isMinting}
-          className="px-4 py-2 mx-auto font-bold text-white transition-opacity rounded-lg hover:opacity-70 bg-gradient-to-br from-green-300 via-blue-500 to-purple-600"
-        >
-          {isMinting ? "loading" : `mint ${mintCount}`}
-        </button>
+        <div className={styles.container_generic}>
 
-        <input
-          disabled={isMinting}
-          type="number"
-          min={2}
-          max={10}
-          className="px-2 mx-auto mt-5 font-bold text-white bg-gray-500"
-          value={mintCount}
-          onChange={(e) => setMintCount((e.target as any).value)}
-        />
-        <p className="mx-auto mt-2">min 2; max 10;</p>
+         
+            <div>
+              <input
+                disabled={isMinting}
+                type="number"
+                min={1}
+                max={5}
+                className="px-3 mx-3 mt-auto font-bold text-white bg-gray-500"
+                value={mintCount}
+                onChange={(e) => setMintCount((e.target as any).value)}
+              />
+
+            </div>
+            <div>
+              <Button
+                onClick={() => startMintMultiple(mintCount)}
+                disabled={isMinting}
+                className={styles.button_mint}
+              >
+                {isMinting ? "loading" : `mint ${mintCount}`}
+              </Button>
+              
+            </div>
+            <p className="mx-auto mt-1">max. 5</p>
+
+        </div>
       </>
     );
   };
 
+  const gridStyle = { margin: "10vh auto", paddingLeft: 50, paddingRight: 50 };
+
   return (
     <>
-      <Head>
-        <title>next-candy-machine</title>
-        <meta
-          name="description"
-          content="Simplified NextJs with typescript example app integrated with Metaplex's Candy Machine"
-        />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <div className={styles.container_page}>
 
-      <div className="flex flex-col items-center min-h-screen mx-6">
-        <Toaster />
-        <div className="flex items-center justify-between w-full mt-3">
-          <h1 className="text-2xl font-bold">next-candy-machine</h1>
-          <div className="flex items-center">
-            {connected && (
-              <div className="flex items-end mr-2">
-                <p className="text-xs text-gray-400">balance</p>
-                <p className="mx-1 font-bold leading-none">
-                  {balance.toFixed(2)}
-                </p>
-                <p
-                  className="font-bold leading-none text-transparent bg-clip-text"
-                  style={{
-                    backgroundImage: `linear-gradient(to bottom right, #00FFA3, #03E1FF, #DC1FFF)`,
-                  }}
-                >
-                  SOL
-                </p>
+        <div className={styles.header}>
+          <div >
+            <Countdown
+              className={styles.countdown}
+              date={mintStartDate}
+              onMount={({ completed }) => completed && setIsMintLive(true)}
+              onComplete={() => setIsMintLive(true)}
+            />
+          </div>
+
+          <div className={styles.wallet_container}>
+            {connected &&
+              <WalletMultiButton className={styles.multi_wallet} />
+            }
+          </div>
+        </div>
+
+        <Grid item container
+          direction="row"
+          style={gridStyle}>
+
+          <Grid item xs={6}>
+            <div className={styles.container_left}>
+              <div className={styles.content_leftTitle}>NFPD</div>
+              <div className={styles.content_leftText}>Do you have what it takes to be an officer of the metaverse?</div>
+              <div className={styles.content_leftPrice}>Mint Price 0.1 SOL</div>
+              <div className={styles.content_socials}>
+                <a className={styles.content_discord} href="https://discord.com" target="_blank" rel="noopener noreferrer"> <Image src={Discord_logo} alt="discord server invite link" /></a>
+                <a className={styles.content_twitter} href="https://twitter.com" target="_blank" rel="noopener noreferrer"> <Image src={Twitter_logo} alt="twitter page link" /></a>
               </div>
-            )}
-            <WalletMultiButton />
-          </div>
-        </div>
-        {connected && (
-          <p className="mr-auto text-sm">
-            <span className="font-bold">Available/Minted/Total:</span>{" "}
-            {nftsData.itemsRemaining}/{nftsData.itemsRedeemed}/
-            {nftsData.itemsAvailable}
-          </p>
-        )}
-        <div className="flex items-start justify-center w-11/12 my-10">
-          {connected ? (
-            <>
-              {new Date(mintStartDate).getTime() < Date.now() ? (
-                <>
-                  {isSoldOut ? (
-                    <p>SOLD OUT</p>
-                  ) : (
-                    <>
-                      <div className="flex flex-col w-1/2">
-                        <h1 className="mb-10 text-3xl font-bold">Mint One</h1>
-                        <button
-                          onClick={startMint}
-                          disabled={isMinting}
-                          className="px-4 py-2 mx-auto font-bold text-white transition-opacity rounded-lg hover:opacity-70 bg-gradient-to-br from-green-300 via-blue-500 to-purple-600"
-                        >
-                          {isMinting ? "loading" : "mint 1"}
-                        </button>
-                      </div>
-                      <div className="flex flex-col w-1/2">
-                        <h1 className="mb-10 text-3xl font-bold">Mint Many</h1>
-                        <MintMany />
-                      </div>
-                    </>
-                  )}
-                </>
-              ) : (
-                <Countdown
-                  date={mintStartDate}
-                  onMount={({ completed }) => completed && setIsMintLive(true)}
-                  onComplete={() => setIsMintLive(true)}
-                />
-              )}
-            </>
-          ) : (
-            <p>connect wallet to mint</p>
-          )}
-        </div>
-        <div className="flex flex-col w-full">
-          <h2 className="text-2xl font-bold">My NFTs</h2>
-          <div className="flex mt-3 gap-x-2">
-            {(nfts as any).map((nft: any, i: number) => {
-              return <AnNFT key={i} nft={nft} />;
-            })}
-          </div>
-        </div>
+            </div>
+
+
+          </Grid>
+
+          <Grid item xs={6}>
+            <div className={styles.container_right}>
+              <Image className={styles.cover_image} src={CoverPhoto} alt="pic" />
+
+              {connected
+                &&
+                <div>
+
+                </div>
+                &&
+                <div className={styles.content_text}>
+                  Balance: {(balance || 0).toLocaleString()} SOL <br></br>
+                  <span>Available:</span>{" "}
+                  {nftsData.itemsRemaining}/{nftsData.itemsAvailable}
+                </div>
+              }
+
+
+              <div className={styles.content_text}>
+                {connected ? (
+                  <>
+                    {new Date(mintStartDate).getTime() < Date.now() ? (
+                      <>
+                        {isSoldOut ? (
+                          <p>SOLD OUT</p>
+                        ) : (
+                          <>
+                            <MintMany />
+                          </>
+                        )}
+                      </>
+                    ) : (
+                      <Button className={styles.button_mint}>Remain Calm</Button>
+                    )}
+                  </>
+                ) : (
+                  <p className={styles.content_text}>Connect Wallet to start minting</p>
+                )}
+              </div>
+
+              <div >
+                {!connected &&
+                  <WalletMultiButton className={styles.connect_wallet} />
+                }
+              </div>
+
+
+
+            </div>
+          </Grid>
+
+        </Grid>
       </div>
     </>
   );
