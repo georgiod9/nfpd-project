@@ -4,8 +4,8 @@
   "version": "0.1.0",
   "scripts": {
     "dev": "next dev",
-    "start": "export SET NODE_OPTIONS=--openssl-legacy-provider && next start",
-    "build": "export SET NODE_OPTIONS=--openssl-legacy-provider && next build",
+    "start": "SET NODE_OPTIONS=--openssl-legacy-provider && next start",
+    "build": "SET NODE_OPTIONS=--openssl-legacy-provider && next build",
     "export": "yarn run build && next export",
     "deploy": "yarn export && touch out/.nojekyll && gh-pages -t -b master -d out",
     "lint": "next lint"
