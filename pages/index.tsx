@@ -85,7 +85,7 @@ export default function Home() {
     );
   };
 
-  const gridStyle = { margin: "10vh auto", paddingLeft: 50, paddingRight: 50 };
+  const gridStyle = { margin: "5vh auto", paddingLeft: 50, paddingRight: 50 };
 
   return (
     <>

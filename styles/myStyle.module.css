@@ -27,7 +27,7 @@
 }
 
 .container_page {
-    margin: 3vh auto;
+    margin: auto auto;
     width: 80%; 
     height: 80%;
 }
@@ -143,8 +143,8 @@
 }
 
 .container_right {
-    margin: auto auto;
-    width: 500px;  
+    margin: 10vh auto;
+    width: 400px;  
     text-align: center;
 }
 
