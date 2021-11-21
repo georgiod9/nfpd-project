@@ -72,20 +72,7 @@
     color: #fcfcfc;
     font-family: 'Poppins Regular';
     inline-size: 200px;
-    margin: 2vh auto;
-}
-
-.content_price {
-    text-align: center;
-    font-size: 14pt;
-    font-weight: normal;
-    color: #105b72;
-    font-family: 'Poppins Light';
-
-    inline-size: 220px;
-    letter-spacing: 1px;
-    margin-left: 34vh;
-    margin-top: 20vh;
+    margin: 5% auto;
 }
 
 .container_left {
@@ -103,7 +90,7 @@
 }
 
 .content_leftText {
-    margin: 5vh auto;
+    margin: 5% auto;
     width: 280px;  
 
     font-family: 'Poppins Light';
@@ -115,7 +102,7 @@
 
 .content_leftPrice {
     margin: auto;
-    margin-top: 19vh;
+    margin-top: 45%;
     inline-size: 220px;
 
     font-family: 'Poppins Light';
@@ -129,7 +116,7 @@
     vertical-align: top;
     text-align: center;
     width: 50%;
-    margin: 11vh auto;
+    margin: 27% auto;
 }
 
 .content_discord {
@@ -143,7 +130,7 @@
 }
 
 .container_right {
-    margin: 10vh auto;
+    margin: 6% auto;
     width: 400px;  
     text-align: center;
 }
