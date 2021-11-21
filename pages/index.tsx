@@ -56,8 +56,6 @@ export default function Home() {
     return (
       <>
         <div className={styles.container_generic}>
-
-         
             <div>
               <input
                 disabled={isMinting}

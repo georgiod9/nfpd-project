@@ -26,6 +26,11 @@
     font-style: normal;
 }
 
+.container_page {
+    margin: 3vh auto;
+    width: 100%; 
+}
+
 .header {
     display: flex;
     align-items: center;
@@ -58,10 +63,6 @@
     font-family: 'Poppins Regular';
 }
 
-.container_page {
-    margin: 3vh auto;
-    width: 1600px; 
-}
 
 .content_text {
     text-align: center;
@@ -88,7 +89,7 @@
 
 .container_left {
     margin: auto auto;
-    width: 800px; 
+    width: 50%; 
 }
 
 .content_leftTitle {
@@ -126,7 +127,7 @@
 .content_socials {
     vertical-align: top;
     text-align: center;
-    width: 800px;
+    width: 50%;
     margin: 11vh auto;
 }
 
@@ -148,13 +149,11 @@
 
 .cover_image {
     margin: auto auto;
-    width: 350px;
 }
 
 .container_wallet {
     margin: auto auto;
     text-align: center;
-    width: 200px;
 
 }
 
@@ -175,7 +174,7 @@
 
 
 .content_mint {
-    width: 150px;
+    width: 25%;
     color:#FFFFFF;
     font-family: 'Poppins Light';
     font-size: 15px;
