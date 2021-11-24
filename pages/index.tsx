@@ -135,10 +135,6 @@ export default function Home() {
                   <div className={styles.content_text}>
                     <span className={styles.colorText}> Wallet Balance: </span>{(balance || 0).toLocaleString()} SOL <br></br>
 
-                    <span className={styles.colorText}>Minted: </span>{" "}
-                    {nftsData.itemsAvailable - nftsData.itemsRemaining}/{nftsData.itemsAvailable}
-                    <span> Highway Patrol Officers</span>{" "}
-
                   </div>
                 }
 
