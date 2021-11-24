@@ -145,7 +145,7 @@
 .content_socials {
     vertical-align: top;
     text-align: center;
-    width: 50%;
+
     margin: 15% auto;
 }
 
@@ -160,7 +160,7 @@
 }
 
 .container_right {
-    margin: 0% auto;
+    margin: 6% auto;
     width: 50%;  
     
     text-align: center;
@@ -168,7 +168,7 @@
 
 .cover_image {
     margin: auto auto;
-    width: 80%;
+    width: 60%;
 }
 
 .container_wallet {
