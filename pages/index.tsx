@@ -58,29 +58,29 @@ export default function Home() {
     return (
       <>
         <div className={styles.container_generic}>
-            <div>
-              <input
-                disabled={isMinting}
-                type="number"
-                min={1}
-                max={5}
-                className="px-3 mx-3 mt-auto font-bold text-white bg-gray-500"
-                value={mintCount}
-                onChange={(e) => setMintCount((e.target as any).value)}
-              />
+          <div>
+            <input
+              disabled={isMinting}
+              type="number"
+              min={1}
+              max={5}
+              className="px-3 mx-3 mt-auto font-bold text-white bg-gray-500"
+              value={mintCount}
+              onChange={(e) => setMintCount((e.target as any).value)}
+            />
 
-            </div>
-            <div>
-              <Button
-                onClick={() => startMintMultiple(mintCount)}
-                disabled={isMinting}
-                className={styles.button_mint}
-              >
-                {isMinting ? "loading" : `mint ${mintCount}`}
-              </Button>
-              
-            </div>
-            <p className="mx-auto mt-1">max. 5</p>
+          </div>
+          <div>
+            <Button
+              onClick={() => startMintMultiple(mintCount)}
+              disabled={isMinting}
+              className={styles.button_mint}
+            >
+              {isMinting ? "loading" : `mint ${mintCount}`}
+            </Button>
+
+          </div>
+          <p className="mx-auto mt-1">max. 5</p>
 
         </div>
       </>
@@ -101,12 +101,6 @@ export default function Home() {
               onMount={({ completed }) => completed && setIsMintLive(true)}
               onComplete={() => setIsMintLive(true)}
             />
-          </div>
-
-          <div className={styles.wallet_container}>
-            {connected &&
-              <WalletMultiButton  className={styles.multi_wallet}/>
-            }
           </div>
         </div>
 
@@ -134,17 +128,17 @@ export default function Home() {
 
               {connected
                 &&
-                <div> 
+                <div>
 
                 </div>
                 &&
                 <div className={styles.content_text}>
                   <span className={styles.colorText}> Wallet Balance: </span>{(balance || 0).toLocaleString()} SOL <br></br>
-                  
+
                   <span className={styles.colorText}>Minted: </span>{" "}
                   {nftsData.itemsAvailable - nftsData.itemsRemaining}/{nftsData.itemsAvailable}
                   <span> Highway Patrol Officers</span>{" "}
-                  
+
                 </div>
               }
 
@@ -170,6 +164,12 @@ export default function Home() {
                   <p className={styles.content_text}>Connect Wallet to start minting</p>
                 )}
               </div>
+
+              {connected &&
+                <div className={styles.wallet_container}>
+                  <WalletMultiButton className={styles.multi_wallet} />
+                </div>
+              }
 
               <div >
                 {!connected &&

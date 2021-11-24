@@ -54,13 +54,13 @@
 .wallet_container {
     width: auto;
     text-align: center;
-    margin-left: 85%;
+    margin: auto;
 }
 
 .multi_wallet {
     text-align: center;
     background-color: #105b72;
-    margin-left: 10%;
+    margin-left: 0%;
 }
 
 .styledText {
