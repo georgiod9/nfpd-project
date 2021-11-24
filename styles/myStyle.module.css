@@ -167,7 +167,7 @@
 
 .container_right {
     margin: 6% auto;
-    width: 50%;  
+    width: 60%;  
     text-align: center;
     justify-content: center;
 }
@@ -184,7 +184,7 @@
 
 .cover_image {
     margin: 5% auto;
-    width: 65%;
+    width: 100%;
 }
 
 .container_wallet {
