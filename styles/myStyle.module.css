@@ -27,9 +27,9 @@
 }
 
 .container_page {
-    margin: auto auto;
-    width: 80%; 
-    height: 80%;
+    margin: 10vh auto;
+    width: 60%; 
+    height: 60%;
 }
 
 .header {
@@ -38,13 +38,13 @@
 }
 
 .countdownDiv {
-    width: 200px;
+    width: auto;
 }
 
 .countdown {
-    margin-left: 67vh;
+    margin: auto;
     text-align: center;
-    font-size: 34pt;
+    font-size: 40pt;
     font-weight: normal;
     color: #fcfcfc;
     font-family: 'Poppins Regular';
