@@ -128,22 +128,22 @@ export default function Home() {
                 <Image src={CoverPhoto} alt="pic" />
               </div>
 
-
+              
               <div className={styles.container_right}>
                 {connected
                   &&
-                  <div>
+                  <div className={styles.content_text}>
                     <span className={styles.colorText}> Wallet Balance: </span>{(balance || 0).toLocaleString()} SOL <br></br>
 
                     <span className={styles.colorText}>Minted: </span>{" "}
                     {nftsData.itemsAvailable - nftsData.itemsRemaining}/{nftsData.itemsAvailable}
-                    <span className={styles.content_text}> Highway Patrol Officers</span>{" "}
+                    <span> Highway Patrol Officers</span>{" "}
 
                   </div>
                 }
 
 
-                <div className={styles.container_details}>
+                <div className={styles.content_text}>
                   {connected ? (
                     <>
                       {new Date(mintStartDate).getTime() < Date.now() ? (
@@ -161,7 +161,7 @@ export default function Home() {
                       )}
                     </>
                   ) : (
-                    <p >Connect Wallet to start minting</p>
+                    <p className={styles.content_text}>Connect Wallet to start minting</p>
                   )}
                 </div>
 
