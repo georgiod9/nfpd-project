@@ -124,14 +124,11 @@ export default function Home() {
           <Grid item xs={6}>
             <div className={styles.right_grid}>
 
-              
-
-              
               <div className={styles.container_right}>
 
-              <div className={styles.cover_image}>
-                <Image src={CoverPhoto} alt="pic" />
-              </div>
+                <div className={styles.cover_image}>
+                  <Image src={CoverPhoto} alt="pic" />
+                </div>
                 {connected
                   &&
                   <div className={styles.content_text}>
