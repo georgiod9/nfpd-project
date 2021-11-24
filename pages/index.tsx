@@ -93,91 +93,98 @@ export default function Home() {
   return (
     <>
       <div className={styles.container_page}>
+
+
+
         <div className={styles.header}>
-          <Countdown
-            className={styles.countdown}
-            date={mintStartDate}
-            onMount={({ completed }) => completed && setIsMintLive(true)}
-            onComplete={() => setIsMintLive(true)}
-          />
+
+
+          <div className={styles.countdown}>
+            <Countdown
+              
+              date={mintStartDate}
+              onMount={({ completed }) => completed && setIsMintLive(true)}
+              onComplete={() => setIsMintLive(true)}
+            />
+          </div>
+
+          <div >
+            {connected &&
+              <WalletMultiButton className={styles.wallet_container} />
+            }
+          </div>
+
         </div>
 
-        <Grid item container
-          direction="row"
-          style={gridStyle}>
 
-          <Grid item xs={6}>
 
-            <div className={styles.container_left}>
+        <div className={styles.container_body}>
 
-              <div className={styles.content_leftTitle}>NFPD</div>
-              <div className={styles.content_leftText}>Do you have what it takes to be an officer of the metaverse?</div>
-              <div className={styles.content_leftPrice}>Mint Price 0.1 SOL</div>
-              <div className={styles.content_socials}>
-                <a className={styles.content_discord} href="https://discord.gg/nfpd" target="_blank" rel="noopener noreferrer"> <Image src={Discord_logo} alt="discord server invite" /></a>
-                <a className={styles.content_twitter} href="https://twitter.com/The_NFPD" target="_blank" rel="noopener noreferrer"> <Image src={Twitter_logo} alt="twitter page" /></a>
-              </div>
+          <div className={styles.container_left}>
+
+            <div className={styles.content_leftTitle}>NFPD</div>
+            <div className={styles.content_leftText}>Do you have what it takes<br></br>to be  an officer<br></br>of the metaverse?</div>
+            <div className={styles.content_leftPrice}>Mint Price 0.1 SOL</div>
+            <div className={styles.content_socials}>
+              <a className={styles.content_discord} href="https://discord.gg/nfpd" target="_blank" rel="noopener noreferrer"> <Image src={Discord_logo} alt="discord server invite" /></a>
+              <a className={styles.content_twitter} href="https://twitter.com/The_NFPD" target="_blank" rel="noopener noreferrer"> <Image src={Twitter_logo} alt="twitter page" /></a>
             </div>
+          </div>
 
 
-          </Grid>
 
-          <Grid item xs={6}>
-            <div className={styles.right_grid}>
+          <div className={styles.container_right}>
 
-              <div className={styles.container_right}>
+            <div className={styles.cover_image}>
+              <Image src={CoverPhoto} alt="pic" />
+            </div>
+            {connected
+              &&
+              <div className={styles.content_text}>
+                <span className={styles.colorText}> Wallet Balance: </span>{(balance || 0).toLocaleString()} SOL <br></br>
 
-                <div className={styles.cover_image}>
-                  <Image src={CoverPhoto} alt="pic" />
-                </div>
-                {connected
-                  &&
-                  <div className={styles.content_text}>
-                    <span className={styles.colorText}> Wallet Balance: </span>{(balance || 0).toLocaleString()} SOL <br></br>
-
-                  </div>
-                }
+              </div>
+            }
 
 
-                <div className={styles.content_text}>
-                  {connected ? (
+            <div className={styles.content_text}>
+              {connected ? (
+                <>
+                  {new Date(mintStartDate).getTime() < Date.now() ? (
                     <>
-                      {new Date(mintStartDate).getTime() < Date.now() ? (
-                        <>
-                          {isSoldOut ? (
-                            <p>SOLD OUT</p>
-                          ) : (
-                            <>
-                              <MintMany />
-                            </>
-                          )}
-                        </>
+                      {isSoldOut ? (
+                        <p>SOLD OUT</p>
                       ) : (
-                        <p className={styles.styledContainer}>Minting hasn't started</p>
+                        <>
+                          <MintMany />
+                        </>
                       )}
                     </>
                   ) : (
-                    <p className={styles.content_text}>Connect Wallet to start minting</p>
+                    <p className={styles.styledContainer}>Minting hasn't started</p>
                   )}
-                </div>
-
-                {connected &&
-                  <div className={styles.wallet_container}>
-                    <WalletMultiButton className={styles.multi_wallet} />
-                  </div>
-                }
-
-                <div >
-                  {!connected &&
-                    <WalletMultiButton className={styles.connect_wallet} />
-                  }
-                </div>
-              </div>
-
+                </>
+              ) : (
+                <p className={styles.content_text}>Connect Wallet to start minting</p>
+              )}
             </div>
-          </Grid>
 
-        </Grid>
+
+
+            <div >
+              {!connected &&
+                <WalletMultiButton className={styles.connect_wallet} />
+              }
+            </div>
+
+          </div>
+
+
+
+
+
+        </div>
+
       </div>
     </>
   );

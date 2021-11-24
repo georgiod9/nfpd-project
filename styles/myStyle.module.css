@@ -28,26 +28,34 @@
 
 .container_page {
     margin: 1vh auto;
-    width: 80%; 
-    height: 80%;
+
 }
 
 .header {
     display: flex;
-    align-items: center;
-}
 
-.container_countdown {
     margin: auto auto;
-}
+    justify-content: space-between;
 
-.countdown {
-    margin: 0 auto;
-    text-align: center;
     font-size: 40pt;
     font-weight: normal;
     color: #fcfcfc;
     font-family: 'Poppins Regular';
+}
+
+.container_body {
+    display: flex;
+    margin: 5vh auto;
+
+}
+
+.container_countdown {
+    margin: auto auto;
+
+}
+
+.countdown {
+    margin: auto auto;
 
 }
 
@@ -56,15 +64,13 @@
 }
 
 .wallet_container {
-    width: auto;
-    text-align: center;
-    margin: auto;
+    margin: auto 2vh;
+    background-color: #105b72;
 }
 
 .multi_wallet {
     text-align: center;
     background-color: #105b72;
-    margin-left: 0%;
 }
 
 .styledText {
@@ -107,11 +113,16 @@
 
 .container_left {
     margin: auto auto;
-    width: 50%; 
+
+
+}
+
+.container_right {
+    margin: auto auto;
 }
 
 .content_leftTitle {
-    margin: 0vh auto;
+    margin: auto auto;
     text-align: center;
     font-size: 70pt;
     font-weight: bold;
@@ -121,7 +132,7 @@
 
 .content_leftText {
     margin: 5% auto;
-    width: 280px;  
+
 
     font-family: 'Poppins Light';
     font-size: 18pt;
@@ -159,18 +170,7 @@
     text-decoration: none;
 }
 
-.right_grid {
-    margin: 6% auto;
-    
-    text-align: center;
-}
 
-.container_right {
-    margin: 6% auto;
-    width: 60%;  
-    text-align: center;
-    justify-content: center;
-}
 
 .content_wallet_to_start {
     text-align: center;
@@ -184,7 +184,7 @@
 
 .cover_image {
     margin: 5% auto;
-    width: 100%;
+    width: 80%;
 }
 
 .container_wallet {
