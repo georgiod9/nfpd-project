@@ -12,12 +12,14 @@ import Countdown from "react-countdown";
 import useWalletNfts from "../hooks/useWalletNFTs";
 import AnNFT from "../components/AnNFT/AnNFT";
 
-import { Grid, Box } from '@material-ui/core';
+import { Grid, Box, styled, Snackbar } from '@material-ui/core';
 
 import Discord_logo from './assets/discord.png';
 import Twitter_logo from './assets/twitter.png';
 import CoverPhoto from './assets/cover-anim.gif';
 import Image from 'next/image';
+
+import Logo from './assets/logo-v3.png'
 
 import styles from '../styles/myStyle.module.css';
 import React from "react";
@@ -92,7 +94,7 @@ export default function Home() {
       <div className={styles.container_page}>
 
         <div className={styles.header}>
-          <div >
+          <div className={styles.countdownDiv} >
             <Countdown
               className={styles.countdown}
               date={mintStartDate}
@@ -103,7 +105,7 @@ export default function Home() {
 
           <div className={styles.wallet_container}>
             {connected &&
-              <WalletMultiButton className={styles.multi_wallet} />
+              <WalletMultiButton  className={styles.multi_wallet}/>
             }
           </div>
         </div>
@@ -118,8 +120,8 @@ export default function Home() {
               <div className={styles.content_leftText}>Do you have what it takes to be an officer of the metaverse?</div>
               <div className={styles.content_leftPrice}>Mint Price 0.1 SOL</div>
               <div className={styles.content_socials}>
-                <a className={styles.content_discord} href="https://discord.com" target="_blank" rel="noopener noreferrer"> <Image src={Discord_logo} alt="discord server invite link" /></a>
-                <a className={styles.content_twitter} href="https://twitter.com" target="_blank" rel="noopener noreferrer"> <Image src={Twitter_logo} alt="twitter page link" /></a>
+                <a className={styles.content_discord} href="https://discord.gg/nfpd" target="_blank" rel="noopener noreferrer"> <Image src={Discord_logo} alt="discord server invite" /></a>
+                <a className={styles.content_twitter} href="https://twitter.com/The_NFPD" target="_blank" rel="noopener noreferrer"> <Image src={Twitter_logo} alt="twitter page" /></a>
               </div>
             </div>
 
@@ -132,14 +134,17 @@ export default function Home() {
 
               {connected
                 &&
-                <div>
+                <div> 
 
                 </div>
                 &&
                 <div className={styles.content_text}>
-                  Balance: {(balance || 0).toLocaleString()} SOL <br></br>
-                  <span>Available:</span>{" "}
-                  {nftsData.itemsRemaining}/{nftsData.itemsAvailable}
+                  <span className={styles.colorText}> Wallet Balance: </span>{(balance || 0).toLocaleString()} SOL <br></br>
+                  
+                  <span className={styles.colorText}>Minted: </span>{" "}
+                  {nftsData.itemsAvailable - nftsData.itemsRemaining}/{nftsData.itemsAvailable}
+                  <span> Highway Patrol Officers</span>{" "}
+                  
                 </div>
               }
 
@@ -158,7 +163,7 @@ export default function Home() {
                         )}
                       </>
                     ) : (
-                      <Button className={styles.button_mint}>Remain Calm</Button>
+                      <p className={styles.styledContainer}>Minting hasn't started</p>
                     )}
                   </>
                 ) : (

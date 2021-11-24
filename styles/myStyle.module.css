@@ -37,6 +37,10 @@
     align-items: center;
 }
 
+.countdownDiv {
+    width: 200px;
+}
+
 .countdown {
     margin-left: 67vh;
     text-align: center;
@@ -44,16 +48,19 @@
     font-weight: normal;
     color: #fcfcfc;
     font-family: 'Poppins Regular';
+
 }
 
 .wallet_container {
     width: auto;
     text-align: center;
-    margin-left: 72vh;
+    margin-left: 85%;
 }
 
 .multi_wallet {
     text-align: center;
+    background-color: #105b72;
+    margin-left: 10%;
 }
 
 .styledText {
@@ -64,6 +71,25 @@
     font-family: 'Poppins Regular';
 }
 
+.styledContainer {
+    text-align: center;
+    font-size: 14pt;
+    font-weight: normal;
+    color: #fcfcfc;
+    font-family: 'Poppins Regular';
+
+    background-color: #105b72;  
+    width: 300px;
+}
+
+.colorText {
+    text-align: center;
+    font-size: 14pt;
+    font-weight: bold;
+    color: #105b72;
+    font-family: 'Poppins Regular';
+}
+
 
 .content_text {
     text-align: center;
@@ -71,7 +97,7 @@
     font-weight: normal;
     color: #fcfcfc;
     font-family: 'Poppins Regular';
-    inline-size: 200px;
+    inline-size: 300px;
     margin: 5% auto;
 }
 
@@ -105,7 +131,7 @@
     margin-top: 45%;
     inline-size: 220px;
 
-    font-family: 'Poppins Light';
+    font-family: 'Poppins Regular';
     font-size: 14pt;
     font-weight: normal;
     color: #105b72;
