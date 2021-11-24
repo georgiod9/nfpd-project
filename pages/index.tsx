@@ -132,18 +132,18 @@ export default function Home() {
               <div className={styles.container_right}>
                 {connected
                   &&
-                  <div className={styles.content_text}>
+                  <div>
                     <span className={styles.colorText}> Wallet Balance: </span>{(balance || 0).toLocaleString()} SOL <br></br>
 
                     <span className={styles.colorText}>Minted: </span>{" "}
                     {nftsData.itemsAvailable - nftsData.itemsRemaining}/{nftsData.itemsAvailable}
-                    <span> Highway Patrol Officers</span>{" "}
+                    <span className={styles.content_text}> Highway Patrol Officers</span>{" "}
 
                   </div>
                 }
 
 
-                <div className={styles.content_text}>
+                <div className={styles.container_details}>
                   {connected ? (
                     <>
                       {new Date(mintStartDate).getTime() < Date.now() ? (
@@ -161,7 +161,7 @@ export default function Home() {
                       )}
                     </>
                   ) : (
-                    <p className={styles.content_wallet_to_start}>Connect Wallet to start minting</p>
+                    <p >Connect Wallet to start minting</p>
                   )}
                 </div>
 

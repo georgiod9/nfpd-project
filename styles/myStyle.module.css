@@ -169,6 +169,7 @@
     margin: 6% auto;
     width: 50%;  
     text-align: center;
+    justify-content: center;
 }
 
 .content_wallet_to_start {
@@ -177,8 +178,8 @@
     font-weight: normal;
     color: #fcfcfc;
     font-family: 'Poppins Regular';
-    inline-size: 200px;
-    margin: 5% auto;
+    inline-size: 300px;
+    margin: auto;
 }
 
 .cover_image {
@@ -190,6 +191,16 @@
     margin: auto auto;
     text-align: center;
 
+}
+
+.container_details {
+    text-align: center;
+    font-size: 14pt;
+    font-weight: normal;
+    color: #fcfcfc;
+    font-family: 'Poppins Regular';
+    inline-size: 300px;
+    margin: auto;
 }
 
 .button {
