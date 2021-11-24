@@ -92,21 +92,22 @@ export default function Home() {
   return (
     <>
       <div className={styles.container_page}>
+        <div className={styles.header}>
+          <Countdown
+            className={styles.countdown}
+            date={mintStartDate}
+            onMount={({ completed }) => completed && setIsMintLive(true)}
+            onComplete={() => setIsMintLive(true)}
+          />
+        </div>
+
         <Grid item container
           direction="row"
           style={gridStyle}>
 
           <Grid item xs={6}>
-        
+
             <div className={styles.container_left}>
-            
-            <Countdown
-              className={styles.countdown}
-              date={mintStartDate}
-              onMount={({ completed }) => completed && setIsMintLive(true)}
-              onComplete={() => setIsMintLive(true)}
-            />
-          
 
               <div className={styles.content_leftTitle}>NFPD</div>
               <div className={styles.content_leftText}>Do you have what it takes to be an officer of the metaverse?</div>

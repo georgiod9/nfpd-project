@@ -27,9 +27,9 @@
 }
 
 .container_page {
-    margin: 10vh auto;
-    width: 60%; 
-    height: 60%;
+    margin: 1vh auto;
+    width: 80%; 
+    height: 80%;
 }
 
 .header {
@@ -37,18 +37,22 @@
     align-items: center;
 }
 
-.countdownDiv {
-    width: auto;
+.container_countdown {
+    margin: auto auto;
 }
 
 .countdown {
-    margin: auto;
+    margin: 0 auto;
     text-align: center;
     font-size: 40pt;
     font-weight: normal;
     color: #fcfcfc;
     font-family: 'Poppins Regular';
 
+}
+
+.countdownDiv {
+    width: auto;
 }
 
 .wallet_container {
@@ -107,7 +111,7 @@
 }
 
 .content_leftTitle {
-    margin: auto auto;
+    margin: 0vh auto;
     text-align: center;
     font-size: 70pt;
     font-weight: bold;
@@ -142,7 +146,7 @@
     vertical-align: top;
     text-align: center;
     width: 50%;
-    margin: 27% auto;
+    margin: 15% auto;
 }
 
 .content_discord {
@@ -156,13 +160,15 @@
 }
 
 .container_right {
-    margin: 6% auto;
-    width: 400px;  
+    margin: 0% auto;
+    width: 50%;  
+    
     text-align: center;
 }
 
 .cover_image {
     margin: auto auto;
+    width: 80%;
 }
 
 .container_wallet {
