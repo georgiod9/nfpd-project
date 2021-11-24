@@ -122,17 +122,15 @@ export default function Home() {
           </Grid>
 
           <Grid item xs={6}>
-            <div>
+            <div className={styles.right_grid}>
 
               <div className={styles.cover_image}>
                 <Image src={CoverPhoto} alt="pic" />
               </div>
+
+
               <div className={styles.container_right}>
                 {connected
-                  &&
-                  <div>
-
-                  </div>
                   &&
                   <div className={styles.content_text}>
                     <span className={styles.colorText}> Wallet Balance: </span>{(balance || 0).toLocaleString()} SOL <br></br>
@@ -163,7 +161,7 @@ export default function Home() {
                       )}
                     </>
                   ) : (
-                    <p className={styles.content_text}>Connect Wallet to start minting</p>
+                    <p className={styles.content_wallet_to_start}>Connect Wallet to start minting</p>
                   )}
                 </div>
 

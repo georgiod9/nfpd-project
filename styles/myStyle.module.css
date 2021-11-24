@@ -159,11 +159,26 @@
     text-decoration: none;
 }
 
+.right_grid {
+    margin: 6% auto;
+    
+    text-align: center;
+}
+
 .container_right {
     margin: 6% auto;
     width: 50%;  
-    
     text-align: center;
+}
+
+.content_wallet_to_start {
+    text-align: center;
+    font-size: 14pt;
+    font-weight: normal;
+    color: #fcfcfc;
+    font-family: 'Poppins Regular';
+    inline-size: 200px;
+    margin: 5% auto;
 }
 
 .cover_image {
