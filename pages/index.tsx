@@ -171,7 +171,7 @@ export default function Home() {
 
 
 
-            <div >
+            <div className={styles.connect_wallet}>
               {!connected &&
                 <WalletMultiButton className={styles.connect_wallet} />
               }
