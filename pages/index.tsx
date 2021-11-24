@@ -122,62 +122,63 @@ export default function Home() {
           </Grid>
 
           <Grid item xs={6}>
-            <div className={styles.cover_image}>
-              <Image  src={CoverPhoto} alt="pic" />
-            </div>
-            <div className={styles.container_right}>
-              {connected
-                &&
-                <div>
+            <div>
 
-                </div>
-                &&
-                <div className={styles.content_text}>
-                  <span className={styles.colorText}> Wallet Balance: </span>{(balance || 0).toLocaleString()} SOL <br></br>
-
-                  <span className={styles.colorText}>Minted: </span>{" "}
-                  {nftsData.itemsAvailable - nftsData.itemsRemaining}/{nftsData.itemsAvailable}
-                  <span> Highway Patrol Officers</span>{" "}
-
-                </div>
-              }
-
-
-              <div className={styles.content_text}>
-                {connected ? (
-                  <>
-                    {new Date(mintStartDate).getTime() < Date.now() ? (
-                      <>
-                        {isSoldOut ? (
-                          <p>SOLD OUT</p>
-                        ) : (
-                          <>
-                            <MintMany />
-                          </>
-                        )}
-                      </>
-                    ) : (
-                      <p className={styles.styledContainer}>Minting hasn't started</p>
-                    )}
-                  </>
-                ) : (
-                  <p className={styles.content_text}>Connect Wallet to start minting</p>
-                )}
+              <div className={styles.cover_image}>
+                <Image src={CoverPhoto} alt="pic" />
               </div>
+              <div className={styles.container_right}>
+                {connected
+                  &&
+                  <div>
 
-              {connected &&
-                <div className={styles.wallet_container}>
-                  <WalletMultiButton className={styles.multi_wallet} />
-                </div>
-              }
+                  </div>
+                  &&
+                  <div className={styles.content_text}>
+                    <span className={styles.colorText}> Wallet Balance: </span>{(balance || 0).toLocaleString()} SOL <br></br>
 
-              <div >
-                {!connected &&
-                  <WalletMultiButton className={styles.connect_wallet} />
+                    <span className={styles.colorText}>Minted: </span>{" "}
+                    {nftsData.itemsAvailable - nftsData.itemsRemaining}/{nftsData.itemsAvailable}
+                    <span> Highway Patrol Officers</span>{" "}
+
+                  </div>
                 }
+
+
+                <div className={styles.content_text}>
+                  {connected ? (
+                    <>
+                      {new Date(mintStartDate).getTime() < Date.now() ? (
+                        <>
+                          {isSoldOut ? (
+                            <p>SOLD OUT</p>
+                          ) : (
+                            <>
+                              <MintMany />
+                            </>
+                          )}
+                        </>
+                      ) : (
+                        <p className={styles.styledContainer}>Minting hasn't started</p>
+                      )}
+                    </>
+                  ) : (
+                    <p className={styles.content_text}>Connect Wallet to start minting</p>
+                  )}
+                </div>
+
+                {connected &&
+                  <div className={styles.wallet_container}>
+                    <WalletMultiButton className={styles.multi_wallet} />
+                  </div>
+                }
+
+                <div >
+                  {!connected &&
+                    <WalletMultiButton className={styles.connect_wallet} />
+                  }
+                </div>
               </div>
-
-
 
             </div>
           </Grid>
