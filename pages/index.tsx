@@ -25,6 +25,7 @@ import styles from '../styles/myStyle.module.css';
 import React from "react";
 import { Button } from "@solana/wallet-adapter-react-ui/lib/Button";
 
+require('@solana/wallet-adapter-react-ui/styles.css');
 
 export default function Home() {
   const [balance] = useWalletBalance();
