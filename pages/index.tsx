@@ -58,32 +58,34 @@ export default function Home() {
 
     return (
       <>
-        <div className={styles.container_generic}>
-          <div>
-            <input
-              disabled={isMinting}
-              type="number"
-              min={1}
-              max={5}
-              className="px-3 mx-3 mt-auto font-bold text-white bg-gray-500"
-              value={mintCount}
-              onChange={(e) => setMintCount((e.target as any).value)}
-            />
+        {false &&
+          <div className={styles.container_generic}>
+            <div>
+              <input
+                disabled={isMinting}
+                type="number"
+                min={1}
+                max={5}
+                className="px-3 mx-3 mt-auto font-bold text-white bg-gray-500"
+                value={mintCount}
+                onChange={(e) => setMintCount((e.target as any).value)}
+              />
+
+            </div>
+            <div>
+              <Button
+                onClick={() => startMintMultiple(mintCount)}
+                disabled={isMinting}
+                className={styles.button_mint}
+              >
+                {isMinting ? "loading" : `mint ${mintCount}`}
+              </Button>
+
+            </div>
+            <p className="mx-auto mt-1">max. 5</p>
 
           </div>
-          <div>
-            <Button
-              onClick={() => startMintMultiple(mintCount)}
-              disabled={isMinting}
-              className={styles.button_mint}
-            >
-              {isMinting ? "loading" : `mint ${mintCount}`}
-            </Button>
-
-          </div>
-          <p className="mx-auto mt-1">max. 5</p>
-
-        </div>
+        }
       </>
     );
   };
@@ -100,12 +102,7 @@ export default function Home() {
 
 
           <div className={styles.countdown}>
-            <Countdown
-              
-              date={mintStartDate}
-              onMount={({ completed }) => completed && setIsMintLive(true)}
-              onComplete={() => setIsMintLive(true)}
-            />
+            MINT OVER
           </div>
 
           <div >
@@ -165,7 +162,7 @@ export default function Home() {
                   )}
                 </>
               ) : (
-                <p className={styles.content_text}>Connect Wallet to start minting</p>
+                <p className={styles.content_text}>Mint Over</p>
               )}
             </div>
 
@@ -178,11 +175,15 @@ export default function Home() {
             </div>
 
           </div>
+        </div>
 
-
-
-
-
+        <div>
+          <h1 className={styles.title_nftlist}>My NFTs</h1>
+          <div className={styles.content_nftlist}>
+            {(nfts as any).map((nft: any, i: number) => {
+              return <AnNFT key={i} nft={nft} />;
+            })}
+          </div>
         </div>
 
       </div>

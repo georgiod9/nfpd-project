@@ -239,3 +239,19 @@
     background-color: #105b72;
     height: 35px;
 }
+
+.content_nftlist {
+    margin: auto auto;
+    background-color: #fbfeffd5;
+    display: flex;
+}
+
+.title_nftlist {
+    margin: auto auto;
+    text-align: center;
+    font-size: 14pt;
+    font-weight: normal;
+    color: #fcfcfc;
+    font-family: 'Poppins Regular';
+
+}
